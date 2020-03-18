@@ -38,10 +38,11 @@
         }
     },
     "repositories": [
-    {
-            "type": "vcs",
-            "url": "git@github.com:justpark/prometheus_client_php.git"
-    },
+        {
+                "type": "vcs",
+                "url": "git@github.com:justpark/prometheus_client_php.git"
+        }
+    ],
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
