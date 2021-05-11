@@ -35,8 +35,11 @@ class HorizonPrometheusExporterServiceProvider extends ServiceProvider
         if ($this->app->routesAreCached()) {
             return;
         }
-        Route::middleware(config('horizon-exporter.middleware'))->group(
-            __DIR__ . '/../routes/api.php'
-        );
+
+        if (config('horizon-exporter.enabled')) {
+            Route::middleware(config('horizon-exporter.middleware'))->group(
+                __DIR__ . '/../routes/api.php'
+            );
+        }
     }
 }
