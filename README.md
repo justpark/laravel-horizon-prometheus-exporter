@@ -1,7 +1,7 @@
 # Laravel Horizon Prometheus Exporter
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lkaemmerling/laravel-horizon-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/lkaemmerling/laravel-horizon-prometheus-exporter)
-[![Build Status](https://img.shields.io/travis/lkaemmerling/laravel-horizon-prometheus-exporter/master.svg?style=flat-square)](https://travis-ci.org/lkaemmerling/laravel-horizon-prometheus-exporter)
+[![Actions Status](https://github.com/lkaemmerling/laravel-horizon-prometheus-exporter/workflows/Tests/badge.svg)](https://github.com/lkaemmerling/laravel-horizon-prometheus-exporter/actions)
 [![Total Downloads](https://img.shields.io/packagist/dt/lkaemmerling/laravel-horizon-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/lkaemmerling/laravel-horizon-prometheus-exporter)
 
 
@@ -29,9 +29,14 @@ php artisan vendor:publish --provider=LKDevelopment\\HorizonPrometheusExporter\\
 ```
 You can configure this package by changing the values in `config/horizon-exporter.php`.
 
+## Custom Metrics
+
+You can also use this package easily to expose custom metrics. You just need to implement the `LKDevelopment\HorizonPrometheusExporter\Contracts\Exporter` interface and then add your implementation to your `config/horizon-exporter.php` like we do it for the Horizon exporters: https://github.com/LKaemmerling/laravel-horizon-prometheus-exporter/blob/master/config/config.php#L17
+
 ## Dashboard
 
 You can find a sample dashboard using this metrics on the [Grafana Marketplace](https://grafana.com/grafana/dashboards/11034).
+
 ### Testing
 
 ``` bash
@@ -40,7 +45,7 @@ composer test
 
 ### Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [Releases](https://github.com/LKaemmerling/laravel-horizon-prometheus-exporter/releases) for more information on what has changed recently.
 
 ## Contributing
 
